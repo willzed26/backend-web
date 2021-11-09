@@ -1,0 +1,11 @@
+.isiposts{
+    position: absolute;
+    padding: 20px;
+    top: 10%;
+    left: 35%;
+    bottom: auto;
+    width: 40%;
+    background-color: white;
+    border: 1px solid blue;
+    margin-left: 50px;
+}

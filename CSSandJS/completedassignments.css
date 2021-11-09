@@ -1,0 +1,7 @@
+.completed-assignments {
+    transition-duration: 0.4s;
+    width: 100%;
+    background-color: gray;
+    border-color: whitesmoke;
+    text-align: left;
+  }

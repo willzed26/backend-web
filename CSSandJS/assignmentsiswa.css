@@ -1,0 +1,13 @@
+button.assigned {
+  transition-duration: 0.4s;
+  width: 100%;
+  background-color: gray;
+  border-color: whitesmoke;
+  text-align: left;
+}
+
+button.assigned:hover {
+  background-color: hsl(122, 35%, 44%);
+  border-color: whitesmoke;
+  color: white;
+}

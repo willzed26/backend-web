@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create assignment</title>
+    <link rel="stylesheet" href="CSSandJS/TampilanDalamKelas.css">
+    <link rel="stylesheet" href="CSSandJS/grades.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSSandJS/assignmentsiswa.css">
+    <link rel="stylesheet" href="CSSandJS/assigmentguru.css">
+</head>
+
+<body style="background-color:aliceblue;">
+    
+    <div class="menusamping">
+        <!-- Menu atas isi tombol kembali dan nama kelas -->
+        <a href ="#home" style="font-size: 16px; color: black;">
+            <p>Menu</p>
+        </a>
+
+        <h5><b>Nama Kelas : Web Prog</b></h5>
+        <hr />
+
+        <!-- Menu untuk penilaiaan -->
+        <a href ="classnotebook.html" style="font-size: 16px; color: black;">
+            <p>Class Notebook</p>
+    
+        <a href ="assignmentsiswa.html" style="font-size: 16px; color: black;">
+            <p>Assignments</p>
+        </a>
+    
+        <a href ="grades.html" style="font-size: 16px; color: black;">
+            <p>Grades</p>
+        </a>
+        
+        <!-- Menu untuk kelas online -->
+        <hr />
+        <p>Channels</p>
+        <a href ="TampilanDalamKelas.html" style="font-size: 16px; color: black;">
+            <p>General</p>
+        </a>
+    </div>
+
+    <div class="navbaratas">
+        <b>Create assignment</b>
+        <hr>
+    
+        <label for="title">Title</label>
+        <textarea id="title" name="title" rows="1" placeholder="Enter title"></textarea><br><br>
+
+        <label for="instructions">Instructions</label>
+        <textarea id="instructions" name="instructions" rows="4" cols="50" placeholder="Enter instructions"></textarea>
+        <br><br>
+
+        <div class="addbtn">
+            <button class="btn">Add resources</button>
+            <input type="file" name="myfile" multiple>
+        </div>
+        <br><br>
+
+        <label for="assignto">Assign to :</label>
+        <div class="select">
+            <select id="selectclass">
+            <option value="Option 1">A Class</option>
+            <option value="Option 2">B Class</option>
+            <option value="Option 3">A and B</option>
+            </select>
+            <span class="focus"></span>
+        </div><br>
+
+        <label for="datedue">Date Due</label>
+        <input type="date" name="datedue" id="datedue">
+
+        <ul>
+            <li><button class="cancel" style="margin-top: 15pt;" type="cancel" >Cancel</button></li>
+            <li><button class="assign" style="margin-top: 15pt;" type="assign" >Assign</button></li>
+        </ul>
+    </div>
+
+ 
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Management System</title>
+
+    <link rel="stylesheet" href="CSSandJS/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <style>
+        body{
+            background: linear-gradient(0deg,black,#262626);
+        }
+    </style>
+
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <img style="width: 100px;height: 100px; margin-top: 10px;" src="Assets/Logo.png">
+            <div class="nav-links" id="navLinks" >
+                <i class="far fa-window-close" onclick="hideMenu()"></i>
+                <ul style="top: 5%; right: 5%;position: absolute;">
+                    <li><a><button class="button" data-bs-toggle="modal" data-bs-target="#SignUp">Sign Up</button></li></a>
+                    <li><a><button class="button" data-bs-toggle="modal" data-bs-target="#LogIn">Log In</button></li></a>
+                    <li><a href="#bottom">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div> 
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1>Lets Start Your Class</h1>
+            <p>
+                NetS is a web based platform intended for educational purposes. Here we provide several features to assist in teaching and learning activities. 
+                This platform can be used for all levels of education and educators. NetS also presents an attractive, responsive, and easy to use interface.
+            </p>
+            <br>
+            <a href="#bottom" class="hero-btn">Click Here To Learn More About Us</a>
+        </div>
+
+    </section>    
+
+    <section class="fitur">
+        <h1>Feature</h1><br>
+        <p> 
+            We provide several features that can support the needs of teaching and learning activities.<br>
+            Here are the main features we offer.
+        </p>
+
+        <div class="row">
+            <div class="fitur-col">
+                <img src="Assets/Easy.webp"><br>
+                <h3>Easy To Use</h3>
+                <p> 
+                    NetS prioritizes ease of use so you can easily get used to it. 
+                    NetS also prioritizes user convenience, that's why we made NetS with a simple concept but with complex functionality.
+                </p>
+            </div>
+            <div class="fitur-col">
+                <img src="Assets/Team.jpg">
+                <h3>Discuss With Others</h3>
+                <p> 
+                   Based on the survey, we found that the problems that often occur to most students are they difficult to learn on their own,
+                    because of that we provide the feature that allow you and others to discuss the problem.
+                </p>
+            </div>
+            <div class="fitur-col">
+                <img src="Assets/Onl.webp">
+                <h3>Making Online Meeting</h3>
+                <p> 
+                    Make teaching and learning activities feel more real and comfortable by communicating face-to-face in online meetings. 
+                    Create a virtual meeting room that can accommodate up to 100 attendees.
+                </p>
+            </div>
+        </div>
+</section>
+
+<section class="bgcon">
+    <div class="cont">
+        <h1>If You Have Question<br><a href="contact.html"></a>You Can Contact Us</h1>
+        <a href="contact.html" class="hero-btn">Contact Us</a>
+    </div>
+</section>
+
+<section class="footer">
+    <h4>About Us</h4>
+    <p id="bottom">
+        NetS is a new startup formed by several students from Tarumanagara University as a local platform for Tarumanagara University students.<br> 
+        Which can also be used by the public.
+    </p>
+
+    <div class="icons">
+        <i class="fab fa-discord"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-twitter"></i>
+    </div>
+    <p>Thank You For Trusting Us <br>Keep Supporting Us<br>.</p>
+</section>
+
+<div>
+    <div class="modal fade" id="SignUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background: none; height: 0px;">
+                <div class="form-box">
+                    <h1>Sign Up</h1>            
+                    <div class="input">
+                        <i class="fas fa-id-card"></i>
+                        <input class="inp" type="text" placeholder="Enter Your Username" required>
+                    </div>
+            
+                    <div class="input">
+                        <i class="fas fa-envelope"></i>
+                        <input class="inp" type="email" placeholder="Enter Your Email" required>           
+                    </div>
+            
+                    <div class="input">
+                        <i class="fas fa-key"></i> 
+                        <input type="password" placeholder="Enter Your Password" id="passInput" required>
+            
+                        <span class="cekPass" onclick="cekPassFunc()">
+                            <i id="show" class="fas fa-eye"></i>  
+                            <i id="hide" class="fas fa-eye-slash"></i>
+                        </span>
+                    </div>
+            
+                    <div class="opt">
+                        <p> Or Sign Up With</p><br><br>
+                    </div>
+            
+                    <div class="icon">
+                        <a href="https://github.com/"><i class="fab fa-github icon"></i></a>
+                        <a href=""><i class="fab fa-google"></i></a>
+                        <a href=""><i class="fab fa-facebook-square"></i></a>
+                    </div>
+                    <a><button class="submit" data-bs-toggle="modal" data-bs-target="#Verification">Sign Up</button></a>
+                    
+                    <div class="login">
+                        <p>Already Have an Account ? <a data-bs-toggle="modal" data-bs-target="#LogIn" style="cursor: pointer;text-decoration: underline;">Log In</a></p>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- verification email -->
+        <div class="modal fade" id="Verification" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="width:400px">
+              <div class="modal-content" style="background-color: rgb(26, 26, 26) ">
+                <div style="text-align: center;margin-top: 10px; font-size: 20px; font-weight: 900;">
+                  <h5 class="modal-title" style="color: aliceblue;">Email Verification</h5>
+                </div>
+                <div class="modal-body ">
+                  <div class="d-flex justify-content-center">
+              <lottie-player
+                src="https://assets1.lottiefiles.com/packages/lf20_OjG2Td.json"
+                background="transparent"
+                speed="1"
+                style="width: 300px; height: 300px"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
+            <div>
+              <h4 style="color: aliceblue">Hello John Doe,</h4>
+              <p class="card-text" style="color: rgb(255, 250, 250);font-weight: 150;">
+                Thank you for registering an account in
+                <span style="font-weight: bold">NetS</span>. Before you get started,
+                we need you to verify your email first.
+              </p>
+                    <div>
+                        <a data-bs-toggle="modal" data-bs-target="#LogIn" class="d-flex justify-content-center btn btn-success">
+                            Close
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      <div class="modal fade" id="LogIn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background: none; height: 0px;">
+                <div class="form-box">
+                    <h1>Log In</h1>
+            
+                    <div class="input">
+                        <i class="fas fa-id-card"></i>
+                        <input class="inp" type="text" placeholder="Enter Your Username" required>
+                    </div>
+            
+                    <div class="input">
+                        <i class="fas fa-key"></i> 
+                        <input type="password" placeholder="Enter Your Password" id="passInput" required>
+            
+                        <span class="cekPass" onclick="cekPassFunc()">
+                            <i id="show" class="fas fa-eye"></i>  
+                            <i id="hide" class="fas fa-eye-slash"></i>
+                        </span>
+                    </div>
+
+                    <div class="fPass">
+                        <a href="ForgotPassword.html" >Forgot Password</a>
+                    </div>
+            
+                    <div class="opt">
+                        <p> Or Log In With</p><br><br>
+                    </div>
+            
+                    <div class="icon">
+                        <a href="https://github.com/"><i class="fab fa-github icon"></i></a>
+                        <a href=""><i class="fab fa-google"></i></a>
+                        <a href=""><i class="fab fa-facebook-square"></i></a>
+                    </div>
+            
+                    <a href="Tampilan daftar dan kode kelas.html"><button type="button" class="submit">Log In</button></a>
+                    <div class="new">
+                        <a data-bs-toggle="modal" data-bs-target="#SignUp" style="cursor: pointer; text-decoration: underline; color: aliceblue;"><strong>Create New Account Here</strong> </a>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script>
+    function cekPassFunc(){
+        var x= document.getElementById("passInput");
+        var y= document.getElementById("show");
+        var z= document.getElementById("hide");
+
+        if(x.type ==='password'){
+            x.type="text";
+            y.style.display="block";
+            z.style.display="none";
+        } else{
+            x.type="password";
+            y.style.display="none";
+            z.style.display="block";
+        }
+    }
+</script>
+
+<script>
+
+    var navLinks=document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right="0";
+    }
+    function hideMenu(){
+        navLinks.style.right="-200px";
+    }
+
+</script>
+
+</body>
+
+
+</html>

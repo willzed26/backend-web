@@ -1,0 +1,824 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>list class</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="CSSandJS/tampilan daftar dan kode kelas.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+
+  <body>
+    <div class="dropdown ac">
+      <button
+        class="btn btn-dark dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Create/Join Class <i class="fas fa-users-cog"></i>
+      </button>
+      <ul class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <a
+            class="dropdown-item drp"
+            type="button"
+            class="edit btn btn-success pull-left"
+            data-bs-toggle="modal"
+            data-bs-target="#CreateC"
+            >Create Class</a
+          >
+        </li>
+        <li>
+          <a
+            class="dropdown-item drp"
+            type="button"
+            class="edit btn btn-success pull-left"
+            data-bs-toggle="modal"
+            data-bs-target="#Join"
+            >Join Class</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- create class -->
+    <div
+      class="modal fade"
+      id="CreateC"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="color: aliceblue"
+            >
+              Create Class
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <label for="CreateClass" style="color: aliceblue"
+              ><strong>Class Name :</strong></label
+            >
+            <input
+              type="text"
+              name="CreateClass"
+              id="CreateClass"
+              placeholder="Enter your class name"
+              style="background-color: #181818; color: white"
+            />
+            <br />
+            <label for="Description" style="color: aliceblue"
+              ><strong>Description :</strong></label
+            >
+            <input
+              type="text"
+              name="Description"
+              id="Description"
+              placeholder="Let people know what this class about"
+              style="background-color: #181818; color: white"
+            />
+            <br />
+            <label for="Privacy" style="color: aliceblue"
+              ><strong>Privacy :</strong></label
+            >
+            <select
+              id="Privacy"
+              name="Privacy"
+              style="background-color: #181818; color: white"
+            >
+              <option value="Private">
+                Private - Only class owner can add members
+              </option>
+              <option value="Public">
+                Public - Anyone can join your class
+              </option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#SuccessCreateClass"
+            >
+              Create
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- join class -->
+    <div
+      class="modal fade"
+      id="Join"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-body">
+            <h3 style="text-align: center; color: aliceblue">
+              Enter Your Class Code
+            </h3>
+            <div class="d-flex justify-content-center">
+              <lottie-player
+                src="https://assets3.lottiefiles.com/packages/lf20_jvj9d2lc.json"
+                background="transparent"
+                speed="1"
+                style="width: 300px; height: 300px"
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
+            <div class="d-flex justify-content-center">
+              <input
+                type="text"
+                placeholder="Enter Code"
+                style="background-color: #181818; color: white; width: 200px"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary pull-right mx-2 my-2"
+              data-bs-toggle="modal"
+              data-bs-target="#SuccessAddClass"
+            >
+              Enter
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary pull-right my-2"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal success create class  -->
+    <div class="modal fade" id="SuccessCreateClass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="width:400px">
+        <div class="modal-content" style="background-color: rgb(26, 26, 26) ">
+          <div class="modal-body ">
+            <div class="d-flex justify-content-center">
+              <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_c6p2mlht.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+      </div>
+      <div>
+        <p class="card-text" style="color: rgb(255, 250, 250);font-weight: 150; text-align: center;">
+          Successfully Create Class!!
+        </p>
+              <div>
+                  <a href="Tampilan daftar dan kode kelas.html" class="d-flex justify-content-center btn btn-success">
+                  Close
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- succes add class  -->
+    <div class="modal fade" id="SuccessAddClass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="width:400px">
+        <div class="modal-content" style="background-color: rgb(26, 26, 26) ">
+          <div class="modal-body ">
+            <div class="d-flex justify-content-center">
+              <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_iMTtq1.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+      </div>
+      <div>
+        <p class="card-text" style="color: rgb(255, 250, 250);font-weight: 150; text-align: center;">
+          Successfully Add Class!!
+        </p>
+              <div>
+                  <a href="Tampilan daftar dan kode kelas.html" class="d-flex justify-content-center btn btn-success">
+                  Close
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal success save profil -->
+    <div class="modal fade" id="SuccessChangeProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="width:400px">
+        <div class="modal-content" style="background-color: rgb(26, 26, 26) ">
+          <div class="modal-body ">
+            <div class="d-flex justify-content-center">
+              <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_c6p2mlht.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+      </div>
+      <div>
+        <p class="card-text" style="color: rgb(255, 250, 250);font-weight: 150; text-align: center;">
+          Saved
+        </p>
+              <div>
+                  <a href="Tampilan daftar dan kode kelas.html" class="d-flex justify-content-center btn btn-success">
+                  Close
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- profile -->
+    <div>
+      <div class="profil">
+        <img class="dot" src="Assets\Sample Profile.webp" alt="" />
+
+        <button class="but" onclick="openForm()"></button>
+
+        <div class="form-popup" style="border: #2b2b2b" id="myForm">
+          <div
+            class="card"
+            style="background-color: #2b2b2b; outline-color: #2b2b2b"
+          >
+            <img
+              src="Assets\Sample Profile.webp"
+              alt="John"
+              style="width: 100%"
+            />
+            <a href="#" class="close" onclick="closeForm()"></a>
+            <h1 style="color: #000000">John Doe</h1>
+            <p class="title" style="color: aliceblue">
+              Student From Indonesia,
+            </p>
+            <p style="color: aliceblue">Universitas Tarumanagara</p>
+            <div class="icon">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+            <div class="mb-1 mx-1">
+              <button
+                type="button"
+                class="edit btn btn-primary pull-left"
+                data-bs-toggle="modal"
+                data-bs-target="#Edit"
+              >
+                Edit
+              </button>
+              <a
+                href="index.html"
+                class="edit btn btn-danger pull-right"
+                style="line-height: 20px"
+              >
+                Log out
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal fade"
+          id="Edit"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body EP">
+                <label for="Profil_Pic" style="color: #000000"
+                  ><strong>Profil Picture :</strong></label
+                >
+                <form id="file-upload-form" class="uploader">
+                  <input
+                    id="file-upload"
+                    type="file"
+                    name="fileUpload"
+                    accept="image/*"
+                  />
+                  <label for="file-upload" id="file-drag">
+                    <img id="file-image" src="#" alt="Preview" class="hidden" />
+                    <div id="start">
+                      <i class="fa fa-download" aria-hidden="true"></i>
+                      <div>Select a file or drag here</div>
+                      <div id="notimage" class="hidden">
+                        Please select an image
+                      </div>
+                      <span id="file-upload-btn" class="btn btn-primary"
+                        >Select a file</span
+                      >
+                    </div>
+                    <div id="response" class="hidden">
+                      <div id="messages"></div>
+                      <progress class="progress" id="file-progress" value="0">
+                        <span>0</span>%
+                      </progress>
+                    </div>
+                  </label>
+                  <br />
+                </form>
+                <form>
+                  <label for="Name" style="color: #000000; left: 0"
+                    ><strong>Name :</strong></label
+                  >
+                  <input
+                    type="text"
+                    id="Name"
+                    name="Name"
+                    placeholder="Your Name"
+                  />
+                  <br />
+                  <label for="Password " style="color: #000000"
+                    ><strong>Password :</strong></label
+                  >
+                  <input
+                    type="text"
+                    id="Password"
+                    name="Password"
+                    placeholder="Your Password (minimum 6 character)"
+                  />
+                  <br />
+                  <label for="Institute " style="color: #000000"
+                    ><strong>Institute :</strong></label
+                  >
+                  <input
+                    type="text"
+                    id="Institute"
+                    name="Institute"
+                    placeholder="Your Institute"
+                  />
+                  <br />
+                  <label for="country" style="color: #000000"
+                    ><strong>Country :</strong></label
+                  >
+                  <select id="country" name="country">
+                    <option value="Afganistan">Afghanistan</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="American Samoa">American Samoa</option>
+                    <option value="Andorra">Andorra</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Anguilla">Anguilla</option>
+                    <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Aruba">Aruba</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Azerbaijan">Azerbaijan</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Barbados">Barbados</option>
+                    <option value="Belarus">Belarus</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Belize">Belize</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Bermuda">Bermuda</option>
+                    <option value="Bhutan">Bhutan</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Bonaire">Bonaire</option>
+                    <option value="Bosnia & Herzegovina">
+                      Bosnia & Herzegovina
+                    </option>
+                    <option value="Botswana">Botswana</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="British Indian Ocean Ter">
+                      British Indian Ocean Ter
+                    </option>
+                    <option value="Brunei">Brunei</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Burkina Faso">Burkina Faso</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Cameroon">Cameroon</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Canary Islands">Canary Islands</option>
+                    <option value="Cape Verde">Cape Verde</option>
+                    <option value="Cayman Islands">Cayman Islands</option>
+                    <option value="Central African Republic">
+                      Central African Republic
+                    </option>
+                    <option value="Chad">Chad</option>
+                    <option value="Channel Islands">Channel Islands</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Christmas Island">Christmas Island</option>
+                    <option value="Cocos Island">Cocos Island</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Comoros">Comoros</option>
+                    <option value="Congo">Congo</option>
+                    <option value="Cook Islands">Cook Islands</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Cote DIvoire">Cote DIvoire</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Cuba">Cuba</option>
+                    <option value="Curaco">Curacao</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="Dominica">Dominica</option>
+                    <option value="Dominican Republic">
+                      Dominican Republic
+                    </option>
+                    <option value="East Timor">East Timor</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                    <option value="Eritrea">Eritrea</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Falkland Islands">Falkland Islands</option>
+                    <option value="Faroe Islands">Faroe Islands</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="French Guiana">French Guiana</option>
+                    <option value="French Polynesia">French Polynesia</option>
+                    <option value="French Southern Ter">
+                      French Southern Ter
+                    </option>
+                    <option value="Gabon">Gabon</option>
+                    <option value="Gambia">Gambia</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Gibraltar">Gibraltar</option>
+                    <option value="Great Britain">Great Britain</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Greenland">Greenland</option>
+                    <option value="Grenada">Grenada</option>
+                    <option value="Guadeloupe">Guadeloupe</option>
+                    <option value="Guam">Guam</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Guinea">Guinea</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Honduras">Honduras</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="India">India</option>
+                    <option value="Iran">Iran</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Isle of Man">Isle of Man</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Kiribati">Kiribati</option>
+                    <option value="Korea North">Korea North</option>
+                    <option value="Korea Sout">Korea South</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Laos">Laos</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Lesotho">Lesotho</option>
+                    <option value="Liberia">Liberia</option>
+                    <option value="Libya">Libya</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Macau">Macau</option>
+                    <option value="Macedonia">Macedonia</option>
+                    <option value="Madagascar">Madagascar</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Malawi">Malawi</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Marshall Islands">Marshall Islands</option>
+                    <option value="Martinique">Martinique</option>
+                    <option value="Mauritania">Mauritania</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Mayotte">Mayotte</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Midway Islands">Midway Islands</option>
+                    <option value="Moldova">Moldova</option>
+                    <option value="Monaco">Monaco</option>
+                    <option value="Mongolia">Mongolia</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Myanmar">Myanmar</option>
+                    <option value="Nambia">Nambia</option>
+                    <option value="Nauru">Nauru</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Netherland Antilles">
+                      Netherland Antilles
+                    </option>
+                    <option value="Netherlands">
+                      Netherlands (Holland, Europe)
+                    </option>
+                    <option value="Nevis">Nevis</option>
+                    <option value="New Caledonia">New Caledonia</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Nicaragua">Nicaragua</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Niue">Niue</option>
+                    <option value="Norfolk Island">Norfolk Island</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Palau Island">Palau Island</option>
+                    <option value="Palestine">Palestine</option>
+                    <option value="Panama">Panama</option>
+                    <option value="Papua New Guinea">Papua New Guinea</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Phillipines">Philippines</option>
+                    <option value="Pitcairn Island">Pitcairn Island</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Puerto Rico">Puerto Rico</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Republic of Montenegro">
+                      Republic of Montenegro
+                    </option>
+                    <option value="Republic of Serbia">
+                      Republic of Serbia
+                    </option>
+                    <option value="Reunion">Reunion</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="St Barthelemy">St Barthelemy</option>
+                    <option value="St Eustatius">St Eustatius</option>
+                    <option value="St Helena">St Helena</option>
+                    <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                    <option value="St Lucia">St Lucia</option>
+                    <option value="St Maarten">St Maarten</option>
+                    <option value="St Pierre & Miquelon">
+                      St Pierre & Miquelon
+                    </option>
+                    <option value="St Vincent & Grenadines">
+                      St Vincent & Grenadines
+                    </option>
+                    <option value="Saipan">Saipan</option>
+                    <option value="Samoa">Samoa</option>
+                    <option value="Samoa American">Samoa American</option>
+                    <option value="San Marino">San Marino</option>
+                    <option value="Sao Tome & Principe">
+                      Sao Tome & Principe
+                    </option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Senegal">Senegal</option>
+                    <option value="Seychelles">Seychelles</option>
+                    <option value="Sierra Leone">Sierra Leone</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="Solomon Islands">Solomon Islands</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Sudan">Sudan</option>
+                    <option value="Suriname">Suriname</option>
+                    <option value="Swaziland">Swaziland</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Syria">Syria</option>
+                    <option value="Tahiti">Tahiti</option>
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="Tajikistan">Tajikistan</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Togo">Togo</option>
+                    <option value="Tokelau">Tokelau</option>
+                    <option value="Tonga">Tonga</option>
+                    <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                    <option value="Tunisia">Tunisia</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Turkmenistan">Turkmenistan</option>
+                    <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                    <option value="Tuvalu">Tuvalu</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="United Arab Erimates">
+                      United Arab Emirates
+                    </option>
+                    <option value="United States of America">
+                      United States of America
+                    </option>
+                    <option value="Uraguay">Uruguay</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Vanuatu">Vanuatu</option>
+                    <option value="Vatican City State">
+                      Vatican City State
+                    </option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Virgin Islands (Brit)">
+                      Virgin Islands (Brit)
+                    </option>
+                    <option value="Virgin Islands (USA)">
+                      Virgin Islands (USA)
+                    </option>
+                    <option value="Wake Island">Wake Island</option>
+                    <option value="Wallis & Futana Is">
+                      Wallis & Futana Is
+                    </option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Zaire">Zaire</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Zimbabwe">Zimbabwe</option>
+                  </select>
+                  <div>
+                    <strong
+                      ><h3 style="text-align: center">Social Media</h3></strong
+                    >
+                    <label for="Github" style="color: #000000"
+                      ><strong>Github :</strong></label
+                    >
+                    <input
+                      type="text"
+                      id="Github"
+                      name="Github"
+                      placeholder="Your Github ex: https://Github.com/JohnDoe"
+                    />
+                    <label for="Instagram" style="color: #000000"
+                      ><strong>Instagram :</strong></label
+                    >
+                    <input
+                      type="text"
+                      id="Instagram"
+                      name="Instagram"
+                      placeholder="Your Instagram ex: https://www.instagram.com/JohnDoe"
+                    />
+                    <label for="Facebook" style="color: #000000"
+                      ><strong>Facebook :</strong></label
+                    >
+                    <input
+                      type="text"
+                      id="Facebook"
+                      name="Facebook"
+                      placeholder="Your Facebook url"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <a href="Tampilan daftar dan kode kelas.html" class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#SuccessChangeProfile">
+                  Save changes
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 style="text-align: center">My Classes</h1>
+
+      <div style="margin-right: auto; margin-left: auto">
+        <div class="container">
+          <div
+            class="row justify-content-center"
+            style="margin-left: auto; margin-right: auto"
+          >
+            <div class="col-md-4">
+              <div class="cardshadow" style="width: 20rem">
+                <a href="TampilanDalamKelas.html">
+                  <img
+                    src="Assets\autumn-2-1382506.webp"
+                    class="card-img-top"
+                    alt="card image cap"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Web Programming</h5>
+                    <p class="card-text">Kelas A</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="cardshadow" style="width: 20rem">
+                <a href="TampilanDalamKelas.html">
+                  <img
+                    src="Assets\lake-at-the-cottage-1372381.webp"
+                    class="card-img-top"
+                    alt="card image cap"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Database System</h5>
+                    <p class="card-text">Kelas A</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="cardshadow" style="width: 20rem">
+                <a href="TampilanDalamKelas.html">
+                  <img
+                    src="Assets\philippine-coins-1483943.webp"
+                    class="card-img-top"
+                    alt="card image cap"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Operating System</h5>
+                    <p class="card-text">Kelas A</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/CSSandJS/Upload.js"></script>
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

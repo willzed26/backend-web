@@ -1,0 +1,21 @@
+.input {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    text-align: center;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+input.submit {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50; 
+    height: 8%;
+    width: 14%;
+    border-radius: 8px;
+}
+
+input.submit:hover {
+    background-color: #4CAF50; 
+    color: white;
+  }
