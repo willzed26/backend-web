@@ -1,16 +1,18 @@
 {
   "name": "projek-uas",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000W\u0000e\u0000b\u0000-\u0000P\u0000r\u0000o\u0000g\u0000r\u0000a\u0000m\u0000m\u0000i\u0000n\u0000g\u0000\r\u0000 \u0000",
+  "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.0.12"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "dev" : "nodemon index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
