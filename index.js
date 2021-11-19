@@ -4,10 +4,15 @@ const session = require('express-session');
 const mongoose = require('mongoose')
 const app = express()
 
-app.use(express.static("public"));
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
+
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+server.listen(3000)
 
 app.use(session ({
     secret:'som3_s3cret_keys',

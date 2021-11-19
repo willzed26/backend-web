@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/CSSandJS/SignUp.css">
+    <link rel="stylesheet" href="/CSSandJS/style.css">
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </head>
+<body>
+  <section >
+    <nav>
+        <img style="width: 100px;height: 100px; margin-top: 10px;" src="/Assets/Logo.png">
+        <div class="nav-links" id="navLinks" >
+            <i class="far fa-window-close" onclick="hideMenu()"></i>
+            <ul style="top: 5%; right: 5%;position: absolute;">
+                <li><a href="/views/pages/SignUp.html"><button class="button" data-bs-toggle="modal">Sign Up</button></li></a>
+                <li><a href="/views/pages/LogIn.html"><button class="button" data-bs-toggle="modal">Log In</button></li></a>
+                <li><a href="#bottom">About</a></li>
+                <li><a href="/views/pages/contact.ejs">Contact</a></li>
+            </ul>
+        </div> 
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+</section>  
+    <div class="form-box" style="width: 45%;">
+        <h1>Sign Up</h1>
+
+        <div class="input">
+            <i class="fas fa-id-card"></i>
+            <input class="inp" type="text" placeholder="Enter Your Fullname" required>
+        </div>
+        <div class="input">
+            <i class="fas fa-envelope"></i>
+            <input class="inp" type="email" placeholder="Enter Your Email" required>           
+        </div>
+        <div class="input">
+            <i class="fas fa-key"></i> 
+            <input type="password" placeholder="Enter Your Password" id="passInput" required>
+
+            <span class="cekPass" onclick="cekPassFunc()">
+                <i id="show" class="fas fa-eye"></i>  
+                <i id="hide" class="fas fa-eye-slash"></i>
+            </span>
+        </div>
+        <div class="icon">
+            <i class="fab fa-github"></i>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook-square"></i>
+        </div>
+        <button type="button" class="submit"><a href="">Sign Up</a></button>
+    </div>
+
+    <section class="footer">
+      <h4>About Us</h4>
+      <p id="bottom" style="font-weight: bold;">
+          NetS is a new startup formed by several students from Tarumanagara University as a local platform for Tarumanagara University students.<br> 
+          Which can also be used by the public.
+      </p>
+  
+      <div class="icons">
+          <i class="fab fa-discord"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-twitter"></i>
+      </div>
+      <p>Thank You For Trusting Us <br>Keep Supporting Us<br>.</p>
+  </section>
+
+    <script>
+        function cekPassFunc(){
+            var x= document.getElementById("passInput");
+            var y= document.getElementById("show");
+            var z= document.getElementById("hide");
+
+            if(x.type ==='password'){
+                x.type="text";
+                y.style.display="block";
+                z.style.display="none";
+            } else{
+                x.type="password";
+                y.style.display="none";
+                z.style.display="block";
+            }
+        }
+    </script>
+
+</body>
+
+</html> 

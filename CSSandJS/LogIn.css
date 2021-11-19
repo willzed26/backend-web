@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background: linear-gradient(0deg,black,#262626);
+    background-position: cover;
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-box {
+    width: 500px;
+    padding: 70px 0;
+    margin: 4% auto;
+    position: relative;
+    border-radius: 10%;
+    background: linear-gradient(0deg,black,#262626);
+}
+
+.form-box:before, .form-box:after {
+    content: '';
+    border-radius: 10%;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(45deg,#A87FDEff,#01FDCAff,#4E13D6ff,#39ADDFff,#6E01FCff,#A87FDEff,#01FDCAff,#4E13D6ff,#39ADDFff,#6E01FCff);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: animate 12s linear infinite;
+}
+
+.form-box:after {
+    filter: blur(20px);
+}
+
+@keyframes animate {
+    0%{background-position: 0 0;}
+    50%{background-position: 300% 0;}
+    100%{background-position: 0 0;}
+}
+
+h1 {
+    color: white;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+.input {
+    margin: 15% auto;
+    width: 80%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-bottom: 4px solid black;
+}
+
+.input input {
+    width: 80%;
+    color: white;
+    font-weight: 600;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+::placeholder {
+    color: rgb(87, 84, 84);
+}
+
+.fas {
+    margin-right: 10%;
+    color: dimgrey;
+}
+.fab {
+    margin-right: 27%;
+    margin-left: -10%;
+}
+
+.icon {
+    color: white;
+    font-size: 270%;
+    margin-top: -8%;
+    margin-bottom: 7%;
+    margin-left: 45%;
+    cursor: pointer;
+}
+
+.cekPass {
+    position: absolute;
+}
+
+#show {
+    display: none;
+    color: dimgrey;
+}
+
+#hide {
+    color: dimgrey;
+}
+
+.submit {
+    width: 85%;
+    padding: 10px;
+    margin: 40px auto 20px;
+    display: block;
+    outline: none;
+    background: transparent;
+    border: 4px solid white;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    position: relative;
+}
+
+.submit:hover {
+    color: black;
+    border: 4px solid  dimgrey;
+    background: white;
+    transition: 0.5s;
+}
+
+/*@media(max-width: 700px){
+    .form-box h1 {
+        font-weight: bolder;
+        font-size: 15mm;
+    }
+    .form-box {
+        margin: 50% 0% 50% 3%;
+        width: 350px;
+    }
+}*/ 
