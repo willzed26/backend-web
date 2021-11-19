@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
 
-    <link rel="stylesheet" href="CSSandJS/style.css">
+    <link rel="stylesheet" href="/CSSandJS/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,15 +30,15 @@
     <section class="header_con">
         <nav>
             <a href="index.html">
-                <img style="width: 100px;height: 100px; margin-top: 10px;" src="Assets/Logo.png">
+                <img style="width: 100px;height: 100px; margin-top: 10px;" src="/Assets/Logo.png">
             </a>
             <div class="nav-links" id="navLinks" >
                 <i class="far fa-window-close" onclick="hideMenu()"></i>
                 <ul style="top: 5%; right: 5%;position: absolute;">
-                    <li><a><button class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign Up</button></li></a>
-                    <li><a><button class="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Log In</button></li></a>
+                    <li><a href="/views/pages/SignUp.html"><button class="button" data-bs-toggle="modal">Sign Up</button></li></a>
+                    <li><a href="/views/pages/LogIn.html"><button class="button" data-bs-toggle="modal">Log In</button></li></a>
                     <li><a href="#bottom">About</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="/views/pages/contact.html">Contact</a></li>
                 </ul>
             </div> 
             <i class="fas fa-bars" onclick="showMenu()"></i>
