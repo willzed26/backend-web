@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+
+    <link rel="stylesheet" href="/CSSandJS/styleTask.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body style="background-color:aliceblue;">
+    
+    <div class="menusamping">
+        <!-- Menu atas isi tombol kembali dan nama kelas -->
+        <a href ="#home" style="font-size: 16px; color: black;">
+            <p>< menu</p>
+        </a>
+
+        <h5><b>Nama Kelas : Web Prog</b></h5>
+        <hr />
+
+        <!-- Menu untuk penilaiaan -->
+        <a href ="classnotebook.html" style="font-size: 16px; color: black;">
+            <p>Class Notebook</p>
+    
+        <a href ="assignment.html" style="font-size: 16px; color: black;">
+            <p>Assignments</p>
+        </a>
+    
+        <a href ="grades.html" style="font-size: 16px; color: black;">
+            <p>Grades</p>
+        </a>
+        
+        <!-- Menu untuk kelas online -->
+        <hr />
+        <p>Channels</p>
+        <a href ="TampilanDalamKelas.html" style="font-size: 16px; color: black;">
+            <p>General</p>
+        </a>
+    </div>
+
+    <div class="navbaratas">
+        <ul>
+            <li><b>Assignments</b></li>
+            <li style="float:right"><a href="#refresh" style="color: black;"><i data-feather="refresh-cw"></i></a></li>
+            </ul>
+        <hr />
+    </div>
+    
+    <div class="form-create">
+        <h2 style="font-weight: bolder;">Create Assignment</h2>
+        <form action="" method="post">
+            <div class="form-part">
+                <label width="150" required="true">Assignment Name</label>
+                <input class="form-input" name="TName" id="name" type="text" placeholder="Please Fill Me" style="color: black;" autofocus required>
+            </div>
+            <div class="form-part">
+                <label width="150">Assignment Description</label>
+                <textarea class="form-input" name="desc" id="desc" rows="6" cols="70" placeholder="Type Something For Your Student" style="color: black;"></textarea>
+            </div>
+            <div class="form-part">
+                <label width="150">Due Date</label>
+                <input class="form-input" name="date" id="date" type="date" style="color: black;" required>
+            </div>
+            <div class="form-part">
+                <label width="150">Upload File</label>
+                <input class="form-input" name="file" id="file" type="file">
+            </div>
+            <div class="form-part">
+                <input class="btn btn-success" type="submit" value="Submit" id="buttonSubmit" onpointermove="dueDate()">
+                <input class="btn btn-danger" type="reset" value="Cancel">
+            </div>
+        </form>
+    </div>

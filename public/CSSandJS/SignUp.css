@@ -12,9 +12,9 @@ body {
 }
 
 .form-box {
-    width: 500px;
-    padding: 70px 0;
-    margin: 4% auto;
+    width: 40%;
+    padding: 5% 0;
+    margin: 2% auto;
     position: relative;
     border-radius: 10%;
     background: linear-gradient(0deg,black,#262626);
@@ -70,16 +70,12 @@ h1 {
 }
 
 ::placeholder {
-    color: rgb(87, 84, 84);
+    color: rgb(173, 166, 166);
 }
 
 .fas {
     margin-right: 10%;
-    color: dimgrey;
-}
-.fab {
-    margin-right: 27%;
-    margin-left: -10%;
+    color: white;
 }
 
 .icon {
@@ -89,6 +85,11 @@ h1 {
     margin-bottom: 7%;
     margin-left: 45%;
     cursor: pointer;
+}
+
+.fab {
+    margin-right: 20%;
+    margin-left: -5%;
 }
 
 .cekPass {
@@ -126,13 +127,31 @@ h1 {
     transition: 0.5s;
 }
 
-/*@media(max-width: 700px){
+/*@media(max-width: 600px){
     .form-box h1 {
         font-weight: bolder;
         font-size: 15mm;
     }
     .form-box {
-        margin: 50% 0% 50% 3%;
-        width: 350px;
+        margin: 50% 0% 50% 2%;
+        width: 95%;
+    }
+    .icon {
+        font-size: 200%;
+        margin-left: 35%;
+    }
+}
+@media(min-width: 750px){
+    .form-box h1 {
+        font-weight: bolder;
+        font-size: 15mm;
+    }
+    .form-box {
+        margin: 50% 0% 50% 2%;
+        width: 95%;
+    }
+    .icon {
+        font-size: 200%;
+        margin-left: 43%;
     }
 }*/ 
