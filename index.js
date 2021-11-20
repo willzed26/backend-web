@@ -12,8 +12,6 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-server.listen(3000)
-
 app.use(session ({
     secret:'som3_s3cret_keys',
     cookie: {}
@@ -34,7 +32,7 @@ mongoose.connect(('mongodb+srv://john:asdzxc@cluster0.dg0vv.mongodb.net/ti2020?r
                     }
                  })
   
-const register =
+// const register =
 app.listen('3000', () => {
     console.log('Server sudah berjalan di port 3000')
     //console.log(__dirname)
