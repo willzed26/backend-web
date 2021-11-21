@@ -30,7 +30,7 @@ mongoose.connect(('mongodb+srv://john:asdzxc@cluster0.dg0vv.mongodb.net/users?re
             }
         })
 
-const indexRouter = require('./routes/app');
+const indexRouter = require('./routes/index');
 const classRouter = require('./routes/class');
 
 app.use('/', indexRouter);
