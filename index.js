@@ -37,6 +37,6 @@ app.use('/', indexRouter);
 app.use('/', classRouter);
 
   
-app.listen('3000', () => {
-    console.log('Server sudah berjalan')
-})
+app.listen(process.env.PORT || 4000, function(){
+    console.log("server is active");
+  });
