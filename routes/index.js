@@ -39,11 +39,11 @@ router.post('/login', async (req,res) => {
                 res.redirect('/MainMenu');
             }
             else {
-                res.render('pages/login', {error: 'Wrong Password!'})
+                res.render('pages/login', {error: 'Password Salah!'})
             }
         }
     });
-    res.render('pages/login', {error: 'Wrong email or password'});
+    res.render('pages/login', {error: 'Email atau Password Salah!'});
 })
 
 router.post('/register', async (req, res) => {
@@ -73,7 +73,7 @@ router.post('/register', async (req, res) => {
             }
         }) 
         req.session.isLoggedIn = true;
-        res.redirect('/');
+        res.redirect('/login');
     }
 })
 module.exports = router;

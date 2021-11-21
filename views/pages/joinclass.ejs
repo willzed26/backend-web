@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="/CSSandJS/style.css">
+
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        width: 50rem;
+    }
+        ::placeholder{
+            color: black;
+        }
+        .input{
+            background-color: #262626;
+        }
+    </style>
+
+  </head>
+<body style="background: #262626;">
+
+    <div class="card text-white bg-secondary mb-3" style="margin-top: 15%;">
+        <div class="card-header">
+          <strong style="font-size: medium; color: black;">JOIN CLASS</strong> 
+        </div>
+        <div class="card-body">
+            <div class="">
+              <form method="post" action="/joinclass">
+                <label for="CodeClass">
+                    Code Class :
+                </label>
+                <input type="text"name="codeclass"id="codeclass"placeholder="Masukkan Kode Kelas"/>
+                <!-- <select id="Privacy" name="Privacy" style="background-color: #f1f1f1; color: #181818">
+                  <option value="Private">
+                    Private - Only class owner can add members
+                  </option>
+                  <option value="Public">
+                    Public - Anyone can join your class
+                  </option>
+                </select> -->
+              </div>
+              <div class="footer">
+                <a type="button"class="btn btn-danger" href="Mainmenu">
+                  Close
+                </a>
+                <button type="submit"class="btn btn-success">
+                  Join
+                </button>
+                <% if (locals.error) { %>
+                  <br>
+                  <span class="text-info pl-2" style="font-size: 2.2vh"><%= error %></span>
+                  <% } %>
+              </form>
+                
+              </div>
+        </div>
+        <!-- <div class="card-footer text-muted">
+          2 days ago
+        </div> -->
+      </div>
+
+</body>
+
+</html> 

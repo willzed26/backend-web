@@ -31,12 +31,12 @@ mongoose.connect(('mongodb+srv://john:asdzxc@cluster0.dg0vv.mongodb.net/users?re
         })
 
 const indexRouter = require('./routes/index');
-const userRouter = require('./routes/user');
+const classRouter = require('./routes/class');
 
 app.use('/', indexRouter);
-// app.use('/user', userRouter);
+app.use('/', classRouter);
 
   
-app.listen('3009', () => {
+app.listen('3000', () => {
     console.log('Server sudah berjalan')
 })
