@@ -1,75 +1,79 @@
-const express = require('express')
-const UserData = require('../models/user')
-const MongoClient = require('mongodb').MongoClient
-const router = express.Router()
+const express = require('express');
+const router = express.Router();
+const User = require('../models/user')
 
-MongoClient.connect("mongodb+srv://john:asdzxc@cluster0.dg0vv.mongodb.net/ti2020?retryWrites=true&w=majority", { useUnifiedTopology: true })
-.then(client => {
-    console.log('Connected to Database')
-    // untuk pilih DB
-    const db = client.db('HaloDocDatabase')
-    const userDB = db.collection('User');
-    const doctorDB = db.collection('Doctor');
-    const articleDB = db.collection('Artikel');
-
-    router.get('/', (req, res) => {
-        res.render('pages/index')
-    })
-    
-    router.get('/SignUp', (req, res) => {
-        res.render('pages/SignUp')
-    })
-    
-    router.get('/LogIn', (req, res) => {
-        res.render('pages/LogIn')
-    })
-
-    router.get('/Contact', (req, res) => {
-        res.render('pages/contact')
-    })
-    
-    router.post(('/authentication'), async (req, res)=>{
-        const email = req.body.email;
-        const password = req.body.password;
-    
-        // untuk pilih collection
-        userDB.find().toArray().then(result => {
-            let isLogin = false; 
-
-            result.forEach((data) => {
-                if (email == data.email && password == data.password) {
-                    req.session.isLoggedIn = true;
-                    req.session.name = data.name;
-                    res.render('pages/security');
-                    isLogin = true;
-                }
-            })
-
-            if (isLogin == false) {
-                res.render('pages/index', { error: "email dan password tidak terdaftar!" });
-            }
-        })
-        .catch(error => console.error(error))
-    })
-
-    router.get(('/logout'), (req, res) => {
-        res.render('pages/validasidokter')
-    })
-
-    // untuk logout
-    // req.session.isLoggedIn = false;
-    // req.session.name = "";
+router.get('/', async (req, res) => {
+   res.render('pages/index');
 })
 
-// app.get("/userprofile" ,(req,res) =>{
-//     res.render("userprofile");
-// })
-// //Auth Routes
-// app.get("/login",(req,res)=>{
-//     res.render("login");
-// });
+router.get('/login', (req, res) => {
+    res.render('pages/login');
+})
 
-// app.get("/register",(req,res)=>{
-//     res.render("register");
-// });
+router.get('/signup', (req, res) => {
+    res.render('pages/signup');
+})
+
+router.get('/contact', (req, res) => {
+    res.render('pages/contact');
+})
+
+router.get('/MainMenu', (req, res) => {
+    res.render('pages/Tampilandaftardankodekelas');
+})
+
+router.get('/logout', (req, res) => {
+    req.session.isLoggedIn = false;
+    res.redirect('/');
+})
+
+router.post('/login', async (req,res) => {
+    const email_ = req.body.email;
+    const password_ = req.body.password;
+
+    datas = await User.find();
+    await datas.forEach((data) => {
+        if (email_ == data.email) {
+            if (password_ == data.password) {
+                req.session.isLoggedIn = true;
+                res.redirect('/MainMenu');
+            }
+            else {
+                res.render('pages/login', {error: 'Wrong Password!'})
+            }
+        }
+    });
+    res.render('pages/login', {error: 'Wrong email or password'});
+})
+
+router.post('/register', async (req, res) => {
+    const name_ = req.body.name;
+    const email_ = req.body.email;
+    datas = await User.find();
+    await datas.forEach((data) => {
+        if (email_ == data.email) {
+            res.render('pages/signup', {error: 'Email sudah terdaftar, silahkan login'})
+        }
+    })
+    var password = req.body.password;
+    const password_ = req.body.password_;
+    if (password != password_) {
+        res.render('pages/signup', {error: 'Password tidak sama'})
+    }
+    else {
+        const user = new User({
+            name: name_,
+            email: email_,
+            password: password_
+        });
+        await user.save((err, res) => {
+            if (err) console.error(err);
+            else {
+                console.log('Sign In Succesful!')
+            }
+        }) 
+        req.session.isLoggedIn = true;
+        res.redirect('/');
+    }
+})
 module.exports = router;

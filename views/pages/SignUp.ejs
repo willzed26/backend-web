@@ -39,30 +39,33 @@
 </section>  
     <div class="form-box" style="width: 45%;">
         <h1>Sign Up</h1>
-
-        <div class="input">
-            <i class="fas fa-id-card"></i>
-            <input class="inp" type="text" placeholder="Enter Your Fullname" required>
-        </div>
-        <div class="input">
-            <i class="fas fa-envelope"></i>
-            <input class="inp" type="email" placeholder="Enter Your Email" required>           
-        </div>
-        <div class="input">
-            <i class="fas fa-key"></i> 
-            <input type="password" placeholder="Enter Your Password" id="passInput" required>
-
-            <span class="cekPass" onclick="cekPassFunc()">
-                <i id="show" class="fas fa-eye"></i>  
-                <i id="hide" class="fas fa-eye-slash"></i>
-            </span>
-        </div>
-        <div class="icon">
-            <i class="fab fa-github"></i>
-            <i class="fab fa-google"></i>
-            <i class="fab fa-facebook-square"></i>
-        </div>
-        <button type="button" class="submit"><a href="">Sign Up</a></button>
+        <form method="post" action="/register">
+            <div class="input">
+                <i class="fas fa-id-card"></i>
+                <input  class="inp" type="text" placeholder="Enter Your Fullname" name="name" id="name" required>
+            </div>
+            <div class="input">
+                <i class="fas fa-envelope"></i>
+                <input   class="inp" type="email" placeholder="Enter Your Email" name="email" id="email" required>           
+            </div>
+            <div class="input">
+                <i class="fas fa-key"></i> 
+                <input   type="password" placeholder="Enter Your Password" name="password" id="password" required>
+            </div>
+            <div class="input">
+                <i class="fas fa-key"></i>
+                <input   type="password" placeholder="Confirm Password" name="password_" id="confirm-password" required>
+                <% if (locals.error) { %>
+                    <span class="text-danger pl-2" style="font-size: 2.2vh"><%= error %></span>
+                <% } %>
+            </div>
+            <!-- <div class="icon">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-google"></i>
+                <i class="fab fa-facebook-square"></i>
+            </div> -->
+            <button type="submit" class="submit">Sign Up</button>
+        </form>
     </div>
 
     <section class="footer">
@@ -81,24 +84,6 @@
       </div>
       <p>Thank You For Trusting Us <br>Keep Supporting Us<br>.</p>
   </section>
-
-    <script>
-        function cekPassFunc(){
-            var x= document.getElementById("passInput");
-            var y= document.getElementById("show");
-            var z= document.getElementById("hide");
-
-            if(x.type ==='password'){
-                x.type="text";
-                y.style.display="block";
-                z.style.display="none";
-            } else{
-                x.type="password";
-                y.style.display="none";
-                z.style.display="block";
-            }
-        }
-    </script>
 
 </body>
 
