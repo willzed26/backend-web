@@ -16,6 +16,25 @@ router.get('/TampilanDalamKelas', (req, res) => {
     res.render('pages/TampilanDalamKelas');
 })
 
+router.get('/classnotebook', (req, res) => {
+    res.render('pages/classnotebook');
+})
+router.get('/assignment', (req, res) => {
+    res.render('pages/assignment');
+})
+router.get('/grades', (req, res) => {
+    res.render('pages/grades');
+})
+router.get('/posts', (req, res) => {
+    res.render('pages/posts');
+})
+router.get('/folders', (req, res) => {
+    res.render('pages/folders');
+})
+router.get('/menumeeting', (req, res) => {
+    res.render('pages/menumeeting');
+})
+
 router.get('/logout', (req, res) => {
     req.session.isLoggedIn = false;
     res.redirect('/');
