@@ -2,6 +2,15 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const mongoose = require('mongoose')
+
+let config;
+try {
+    config = require("./config");
+} catch (e) {
+    console.log("No config file found");
+    process.exit(0);
+}
+
 const app = express()
 
 app.use(express.static("public"));
@@ -20,7 +29,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-mongoose.connect(('mongodb+srv://john:asdzxc@cluster0.dg0vv.mongodb.net/users?retryWrites=true&w=majority'),
+mongoose.connect((`mongodb+srv://${config.username}:${config.password}@${config.host}:${config.port}/${config.database}?retryWrites=true&w=majority`),
     (err, res) => {
         if (err) {
             console.err(err);
